@@ -4,9 +4,83 @@
     box-sizing: border-box;
 }
 
+
+/* Refonte */
+.navbar {
+    animation-name: slideFromTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
 #home {
     background-color: #f2f2f2;
+    animation-name: slideFromLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 0.9;
+    }
+}
+
+#search {
+    animation-name: slideFromTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translatey(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+.desc {
+    animation-name: opacityOn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacityOn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.albumCard {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.animation {
+    font-size: 0.8rem;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+/* Fin refonte */
+
+
 
 body,
 html {
@@ -14,17 +88,17 @@ html {
     font-family: 'Alice', serif;
 }
 
-h2, h3 {
+h2, h3, h5 {
     color : white;
 }
 
 body {
     margin: auto;
     overflow: auto;
-    background: linear-gradient(315deg, rgb(62, 62, 62) 3%, rgb(21, 21, 21) 38%, rgb(51, 51, 51) 68%, rgb(66, 66, 66) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
+    background: url(../images/background-concert.jpg);
     background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @keyframes gradient {
@@ -42,7 +116,7 @@ body {
 }
 
 .wave {
-    background: rgb(255 255 255 / 25%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 100%);
     border-radius: 1000% 1000% 0 0;
     position: fixed;
     width: 200%;
@@ -57,14 +131,14 @@ body {
 
 .wave:nth-of-type(2) {
     bottom: -1.25em;
-    animation: wave 18s linear reverse infinite;
-    opacity: 0.8;
+    animation: wave 15s linear reverse infinite;
+    opacity: 0.2;
 }
 
 .wave:nth-of-type(3) {
     bottom: -2.5em;
     animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 @keyframes wave {
@@ -73,18 +147,18 @@ body {
     }
 
     25% {
-        transform: translateX(-25%);
+        transform: translateX(-18%);
     }
 
-    50% {
+    32% {
         transform: translateX(-50%);
     }
 
-    75% {
-        transform: translateX(-25%);
+    25% {
+        transform: translateX(-34%);
     }
 
-    100% {
+    3% {
         transform: translateX(1);
     }
 }
@@ -97,10 +171,20 @@ body {
     display: none;
 }
 
-.btn:hover {
-    color: black;
-    background-color: rgb(232, 232, 64);
-    border-color: yellow;
+
+.btn-submit {
+    border: none; /* Suppression de la bordure */
+    background-color: rgb(138, 138, 138);
+    color: #fff;
+    padding: 10px 20px; /* Ajustement du padding pour le style du bouton */
+    cursor: pointer;
+    box-shadow: 0 0 40px 40px rgb(180, 180, 180) inset, 0 0 0 0 rgb(180, 180, 180);
+    transition: all 150ms ease-in-out;
+    border-radius: 5px; /* Ajout d'un border-radius pour le style du bouton */
+}
+
+.btn-submit:hover {
+    box-shadow: 0 0 10px 0 rgb(180, 180, 180) inset, 0 0 10px 4px rgb(180, 180, 180);
 }
 
 .no-outline:focus {
@@ -141,7 +225,10 @@ body {
     box-shadow: 2px 2px 2px rgb(172, 172, 172);
 }
 
-.close {
+span.close {
+    width: 10%;
+    display: flex;
+    justify-content: center;
     color: #000000;
     float: right;
     font-size: 35px;
@@ -151,10 +238,11 @@ body {
 
 .close:hover,
 .close:focus {
-    color: #f51212;
+    color: #7c0c0c;
     text-decoration: none;
     cursor: pointer;
 }
+
 
 .volume-controls {
     display: flex;
@@ -200,10 +288,28 @@ body {
 }
 
 table {
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    animation-name: slideFromBack;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
+
+@keyframes slideFromBack {
+    from {
+        transform: translatey(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translatey(0%);
+        opacity: 1;
+    }
+}
+
+
 
 /* .table>:not(caption)>*>* {
     border-bottom-width: 0;
@@ -220,6 +326,18 @@ table {
     border: none;
     cursor: pointer;
     padding: 0;
+    transition: transform 0.2s ease;
+}
+
+
+.btn-play:active {
+    transform: scale(0.9); 
+}
+
+
+.btn-play:focus {
+    outline: none; 
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 .btn-play i {
@@ -238,7 +356,19 @@ table {
     border: none;
     cursor: pointer;
     padding: 0;
+    transition: transform 0.2s ease;
 }
+
+
+.btn-stop:active {
+    transform: scale(0.7); 
+}
+
+
+.btn-stop:focus {
+    outline: none; 
+}
+
 
 .btn-stop i {
     color: #000;
@@ -246,5 +376,6 @@ table {
 }
 
 .current-track {
-    background-color: yellow !important;
+    background-color: rgb(99, 99, 99) !important;
+    color : white;
 }

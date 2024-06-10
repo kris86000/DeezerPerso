@@ -44,7 +44,7 @@ window.addEventListener('load', function () {
             albumTitre.innerText = titreAlbum;
 
             var date = document.createElement('h5');
-            date.className = 'text-center mt-2 text-muted';
+            date.className = 'text-center mt-2';
             date.innerText = 'Sortie le : ' + formatDate;
 
             var cardAlbum = document.createElement('div');

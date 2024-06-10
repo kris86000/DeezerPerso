@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
                     var albumTitle = albumElt.album.title;
 
                     var col = document.createElement('div');
-                    col.classList.add('col-md-4', 'col-lg-4', 'col-sm-12', 'mt-5', 'd-flex', 'justify-content-center', 'mb-3');
+                    col.classList.add('albumCard','col-md-4', 'col-lg-4', 'col-sm-12', 'mt-5', 'd-flex', 'justify-content-center', 'mb-3');
 
                     var card = document.createElement('div');
                     card.classList.add('card');
