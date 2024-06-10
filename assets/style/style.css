@@ -174,13 +174,13 @@ body {
 
 .btn-submit {
     border: none; /* Suppression de la bordure */
-    background-color: rgb(138, 138, 138);
+    background-color: rgb(113, 113, 113);
     color: #fff;
-    padding: 10px 20px; /* Ajustement du padding pour le style du bouton */
+    padding: 10px 20px;
     cursor: pointer;
     box-shadow: 0 0 40px 40px rgb(180, 180, 180) inset, 0 0 0 0 rgb(180, 180, 180);
     transition: all 150ms ease-in-out;
-    border-radius: 5px; /* Ajout d'un border-radius pour le style du bouton */
+    border-radius: 5px;
 }
 
 .btn-submit:hover {
