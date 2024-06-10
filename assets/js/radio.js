@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
                 var cardBody = document.createElement('div');
                 cardBody.className = 'card-body';
 
-                var title = document.createElement('h5');
+                var title = document.createElement('h6');
                 title.className = 'card-title fw-bold text-center';
                 title.textContent = topTitle;
                 cardBody.appendChild(title);

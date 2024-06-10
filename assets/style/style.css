@@ -173,7 +173,7 @@ body {
 
 
 .btn-submit {
-    border: none; /* Suppression de la bordure */
+    border: none;
     background-color: rgb(113, 113, 113);
     color: #fff;
     padding: 10px 20px;
